@@ -1,0 +1,35 @@
+Started by user [8mha:////4EmPAr4r+jLks9JaQr+mehgytk6eNbK3xVGngvT0pkK+AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/01_Daily_Info
+[01_Daily_Info] $ /bin/sh -xe /tmp/jenkins8355172753725339095.sh
++ rm -rf result.txt result.log
++ date +%Y
++ date +%m
++ date +%d
++ echo year=2023&month=01&day=16
++ TODAY=year=2023&month=01&day=16
++ tee -a result.txt
++ date
++ echo Today is Mon Jan 16 23:15:30 UTC 2023
+Today is Mon Jan 16 23:15:30 UTC 2023
++ + echo Holiday API response
+tee -a result.txt
+Holiday API response
++ curl -s https://calendarific.com/api/v2/holidays?&api_key=26a8883236ab2ba9b723c04ee0281cf3f42273e8&country=BY&year=2023&month=01&day=16
++ tee -a result.txt
+{"meta":{"code":200},"response":{"holidays":[]}}+ echo \nCurrency USD
++ tee -a result.txt
+
+Currency USD
++ tee -a result.txt
++ curl -s https://www.nbrb.by/api/exrates/rates/USD?parammode=2
+{"Cur_ID":431,"Date":"2023-01-17T00:00:00","Cur_Abbreviation":"USD","Cur_Scale":1,"Cur_Name":"Доллар США","Cur_OfficialRate":2.6162}+ echo \nCurrency EUR
++ tee -a result.txt
+
+Currency EUR
++ curl -s https://www.nbrb.by/api/exrates/rates/EUR?parammode=2+ 
+tee -a result.txt
+{"Cur_ID":451,"Date":"2023-01-17T00:00:00","Cur_Abbreviation":"EUR","Cur_Scale":1,"Cur_Name":"Евро","Cur_OfficialRate":2.8315}[Slack Notifications] will send OnSuccessNotification because build matches and user preferences allow it
+Using dirname=/var/lib/jenkins/workspace/01_Daily_Info and includeMask=result.txt
+Adding file /var/lib/jenkins/workspace/01_Daily_Info/result.txt
+Finished: SUCCESS
